@@ -27,9 +27,29 @@ function App() {
   return (
     <div className="App">
       <h1>React Complete Guide</h1>
-      <button onClick={switchNameHandler}>SwitchName</button>
-      <Person name={persons[0].name} age={persons[0].age} click={switchNameHandler} />
-      <Person name={persons[1].name} age={persons[1].age} changeHandler={changeHandler}>
+      <button
+        style={{
+          padding: 15,
+          backgroundColor: "#2E1b",
+          fontWeight: "bold",
+          border: "none",
+          borderRadius: 10,
+          cursor: "pointer",
+        }}
+        onClick={switchNameHandler}
+      >
+        SwitchName
+      </button>
+      <Person
+        name={persons[0].name}
+        age={persons[0].age}
+        click={switchNameHandler}
+      />
+      <Person
+        name={persons[1].name}
+        age={persons[1].age}
+        changeHandler={changeHandler}
+      >
         Hobbies: Travling
       </Person>
       <Person name={persons[2].name} age={persons[2].age} />
