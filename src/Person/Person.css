@@ -1,0 +1,16 @@
+.Person{
+    width: 60%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 10px auto;
+    text-align: center;
+    box-shadow: 0px 2px 3px #eee;
+}
+
+.App{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
