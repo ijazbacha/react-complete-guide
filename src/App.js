@@ -20,7 +20,7 @@ function App() {
     <div className="App">
       <h1>React Complete Guide</h1>
       <button onClick={switchNameHandler}>SwitchName</button>
-      <Person name={persons[0].name} age={persons[0].age} />
+      <Person name={persons[0].name} age={persons[0].age} click={switchNameHandler} />
       <Person name={persons[1].name} age={persons[1].age}>
         Hobbies: Travling
       </Person>
