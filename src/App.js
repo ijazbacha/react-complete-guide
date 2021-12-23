@@ -6,6 +6,9 @@ function App() {
     <div className="App">
      <h1>React Complete Guide</h1>
      <Person />
+     <Person />
+     <Person />
+     <Person />
     </div>
   );
 }
