@@ -1,9 +1,9 @@
 
 
-const person = () =>{
+const person = (props) =>{
     return(
         <div>
-            <h2>This is a Person { Math.floor(Math.random() * 30)  } Component</h2>
+            <p>I'm {props.name} and i'm {props.age}! </p>
         </div>
     )
 }
