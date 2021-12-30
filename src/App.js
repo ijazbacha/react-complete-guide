@@ -31,19 +31,12 @@ function App() {
   if(showPerson){
     person = (
       <div style={{ width: "100%" }}>
-          <Person
-            name={persons[0].name}
-            age={persons[0].age}
-            click={switchNameHandler}
-          />
-          <Person
-            name={persons[1].name}
-            age={persons[1].age}
-            changeHandler={changeHandler}
-          >
-            Hobbies: Travling
-          </Person>
-          <Person name={persons[2].name} age={persons[2].age} />
+        {
+          persons.map((person, i) =>(
+            <Person key={i} name={person.name} age={person.age} changeHandler={changeHandler} />
+          ))
+        }
+          
         </div>
     )
   }
