@@ -20,9 +20,11 @@ function App() {
   };
 
   const  deletePersonHandler = (personIndex) =>{
-    persons.splice(personIndex, 1)
-    console.log("delete person", persons)
-    setPersons(result => [ ...result])
+    const data = [...persons]
+    console.log(data)
+    data.splice(personIndex, 1)
+    console.log("delete person", data)
+    setPersons([...data])
   }
 
   let person = null
