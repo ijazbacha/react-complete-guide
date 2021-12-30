@@ -1,7 +1,9 @@
 import { useState } from "react";
 import Person from "./Person/Person";
+import "./Person/Person.css";
 
 function App() {
+  const [showPerson, setShowPerson] = useState(false);
   const [persons, setPersons] = useState([
     { name: "ijaz", age: "24" },
     { name: "bacha", age: "20" },
@@ -36,23 +38,27 @@ function App() {
           borderRadius: 10,
           cursor: "pointer",
         }}
-        onClick={switchNameHandler}
+        onClick={() => setShowPerson(!showPerson)}
       >
         SwitchName
       </button>
-      <Person
-        name={persons[0].name}
-        age={persons[0].age}
-        click={switchNameHandler}
-      />
-      <Person
-        name={persons[1].name}
-        age={persons[1].age}
-        changeHandler={changeHandler}
-      >
-        Hobbies: Travling
-      </Person>
-      <Person name={persons[2].name} age={persons[2].age} />
+      {showPerson ? (
+        <div style={{ width: "100%" }}>
+          <Person
+            name={persons[0].name}
+            age={persons[0].age}
+            click={switchNameHandler}
+          />
+          <Person
+            name={persons[1].name}
+            age={persons[1].age}
+            changeHandler={changeHandler}
+          >
+            Hobbies: Travling
+          </Person>
+          <Person name={persons[2].name} age={persons[2].age} />
+        </div>
+      ) : null}
     </div>
   );
 }
