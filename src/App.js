@@ -26,6 +26,28 @@ function App() {
     ]);
   };
 
+  let person = null
+
+  if(showPerson){
+    person = (
+      <div style={{ width: "100%" }}>
+          <Person
+            name={persons[0].name}
+            age={persons[0].age}
+            click={switchNameHandler}
+          />
+          <Person
+            name={persons[1].name}
+            age={persons[1].age}
+            changeHandler={changeHandler}
+          >
+            Hobbies: Travling
+          </Person>
+          <Person name={persons[2].name} age={persons[2].age} />
+        </div>
+    )
+  }
+
   return (
     <div className="App">
       <h1>React Complete Guide</h1>
@@ -42,7 +64,8 @@ function App() {
       >
         SwitchName
       </button>
-      {showPerson ? (
+      {person}
+      {/* {showPerson ? (
         <div style={{ width: "100%" }}>
           <Person
             name={persons[0].name}
@@ -58,7 +81,7 @@ function App() {
           </Person>
           <Person name={persons[2].name} age={persons[2].age} />
         </div>
-      ) : null}
+      ) : null} */}
     </div>
   );
 }
