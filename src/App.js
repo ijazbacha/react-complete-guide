@@ -10,13 +10,6 @@ function App() {
     { name: "zaid", age: "10" },
   ]);
 
-  const switchNameHandler = () => {
-    setPersons([
-      { name: "ijaz bacha", age: "24" },
-      { name: "bacha", age: "20" },
-      { name: "zaid", age: "30" },
-    ]);
-  };
 
   const changeHandler = (e) => {
     setPersons([
@@ -26,20 +19,30 @@ function App() {
     ]);
   };
 
+  const  deletePersonHandler = (personIndex) =>{
+    persons.splice(personIndex, 1)
+    console.log("delete person", persons)
+    setPersons(result => [ ...result])
+  }
+
   let person = null
 
   if(showPerson){
     person = (
       <div style={{ width: "100%" }}>
         {
-          persons.map((person, i) =>(
-            <Person key={i} name={person.name} age={person.age} changeHandler={changeHandler} />
+          persons.map((person, index) =>(
+            <Person key={index} name={person.name} age={person.age}  click={() => deletePersonHandler(index)} />
           ))
         }
           
         </div>
     )
   }
+
+  console.log('====================================');
+  console.log("persons", persons);
+  console.log('====================================');
 
   return (
     <div className="App">
@@ -58,23 +61,7 @@ function App() {
         SwitchName
       </button>
       {person}
-      {/* {showPerson ? (
-        <div style={{ width: "100%" }}>
-          <Person
-            name={persons[0].name}
-            age={persons[0].age}
-            click={switchNameHandler}
-          />
-          <Person
-            name={persons[1].name}
-            age={persons[1].age}
-            changeHandler={changeHandler}
-          >
-            Hobbies: Travling
-          </Person>
-          <Person name={persons[2].name} age={persons[2].age} />
-        </div>
-      ) : null} */}
+      
     </div>
   );
 }
